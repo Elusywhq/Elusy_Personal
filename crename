@@ -20,5 +20,5 @@ fi
 for oldfile in "${files[@]}"; do
     suffix="${oldfile#$oldprefix}"
     newfile="${newprefix}${suffix}"
-    cp -i -- "$oldfile" "$newfile"
+    cp  "$oldfile" "$newfile"
 done
