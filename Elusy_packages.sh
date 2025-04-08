@@ -25,3 +25,13 @@ crename() {
     done
 }
 
+
+function PBS-qstat()
+{
+  qstat -fx $1 | grep job_stat | awk '{print $3}'
+}
+
+function PBS-host()
+{
+  qstat -f $1 | grep host
+}
