@@ -41,6 +41,28 @@ function PBS-chmlu5()
 
 }
 
+function PBS-chmlu7()
+{
+    if [ "$Host" = "hpc" ]; then
+        for file in "$@"; do
+           file_name=${file%.*}
+           sed -i "s/colo-chmlu-08/colo-chmlu-07/g" "$file_name.sh"
+        done
+    fi
+
+}
+
+function PBS-chmlu4()
+{
+    if [ "$Host" = "hpc" ]; then
+        for file in "$@"; do
+           file_name=${file%.*}
+           sed -i "s/colo-chmlu-08/colo-chmlu-04/g" "$file_name.sh"
+        done
+    fi
+
+}
+
 function qjlist_test(){
     if [ -n "$1" ]; then
         qstat -f | grep -E "Job Id|Job_Name" | awk '
